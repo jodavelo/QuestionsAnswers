@@ -13,7 +13,7 @@ class TranslateController extends Controller
    		//$languageDetect = new LanguageDetectController();
 
    		//$ld = $languageDetect->getLanguageDetect($text);
-         $source = $sourceDetected;
+        $source = $sourceDetected;
    		$target = 'en';
 
    		$trans = new GoogleTranslate();

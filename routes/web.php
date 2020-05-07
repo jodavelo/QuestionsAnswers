@@ -23,3 +23,6 @@ Route::get('/', function () {
 });
 
 Route::get('test/{question}', 'BusinessLogicController@testMethod');
+
+Route::get('simi1', 'SimilarityController@primerMetodo');
+Route::get('simi2', 'SimilarityController@segundoMetodo');
