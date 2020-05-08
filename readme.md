@@ -11,7 +11,7 @@ composer install
 ## Variable adjustment env
 Copy the content of the .env.example file and create a file with the name .env in the root of the project and paste the previously copied content
 
-## Generate the applicacion key 
+## Generate the application key 
 ```
 php artisan key:generate
 ```
