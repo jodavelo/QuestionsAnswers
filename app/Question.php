@@ -9,6 +9,7 @@ class Question extends Model
     protected $table = 'questions';
     $incrementing = true;
     $primaryKey = 'question_id';
+    $timestamps = true;
 
     /**
 	 * Get the answer record associated with the question

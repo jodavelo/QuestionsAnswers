@@ -10,7 +10,6 @@ class Answer extends Model
     $incrementing = true;
     $primaryKey = 'answer_id';
 
-
     /**
 	* Get the question related to answer
     */
