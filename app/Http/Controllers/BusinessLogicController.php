@@ -12,6 +12,7 @@ class BusinessLogicController extends Controller
     	$langDetected = $languageDetect->getLanguageDetect($question);
     	$textTranslated1 = $translate->translate($langDetected, $question);
 	   	$respuesta = $textTranslated1;
-	    return $respuesta."?";
+	    //return $respuesta."?";
+	    return $langDetected;
    }
 }

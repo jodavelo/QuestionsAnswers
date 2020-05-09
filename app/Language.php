@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Language extends Model
 {
     protected $table = 'language';
-    $incrementing = true;
-    $primaryKey = 'language_id';
-    $timestamps = true;
+    public $incrementing = true;
+    public $primaryKey = 'language_id';
+    public $timestamps = true;
 
     // 1->*
     public function answer(){
