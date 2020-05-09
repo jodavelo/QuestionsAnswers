@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     protected $table = 'questions';
+    $incrementing = true;
     $primaryKey = 'question_id';
 
     /**
@@ -14,6 +15,6 @@ class Question extends Model
     **/
 
     public function answer(){
-    	return $this->hasOne('App\Answer');
+    	return $this->hasOne(Answer::class, 'answer_id');
     }
 }
