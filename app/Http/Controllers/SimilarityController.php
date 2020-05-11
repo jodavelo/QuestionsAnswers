@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Question;
+
 class SimilarityController extends Controller
 {
-    public function primerMetodo(){
-    	$str_a = "Como estas hoy?";
-    	$str_b = "Como te sientes hoy?";
+    public function similarityMethod($question, $dbQuestion){
+    	$str_a = $question;
+    	$str_b = $dbQuestion;
 
     	$length = strlen($str_a);
 	    $length_b = strlen($str_b);
@@ -93,5 +95,38 @@ class SimilarityController extends Controller
 		} else {
 		    echo "Did you mean: $closest?\n";
 		}
+    }
+
+    public function populateArrayScores($requestQuestion){
+    	$scores = array();
+    	$arrayGnal = array();
+    	$questions = Question::all();
+    	foreach ($questions as $key => $question) {
+    		$score = $this->similarityMethod($requestQuestion, $question->question);
+    		$scores['score'] = $score;
+    		$scores['questionObject'] = $question;
+    		array_push($arrayGnal, $scores);
+    	}
+    	//dd($arrayGnal);
+    	return $arrayGnal;
+    }
+
+    public function getQuestionSimilarity(){
+    	$question = null;
+    	$testQ = "as you are today";
+    	//$testQ = "the end";
+    	if($testQ == null || $testQ == ''){
+    		return "Please check the question";
+    	}
+    	$arrayScores = $this->populateArrayScores($testQ);
+    	foreach ($arrayScores as $key => $value) {
+    		if($value['score'] > 0.6){
+    			$question = $value['questionObject'];
+    		}
+    	}
+    	if($question == null){
+    		return "no results for your question";
+    	}
+    	return $question;
     }
 }

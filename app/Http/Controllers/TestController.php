@@ -12,7 +12,7 @@ class TestController extends Controller
     	$language = new Language();
     	$language->language = "italian";
     	$language->iso2 = 'it';
-    	$language->save();
+    	//$language->save();
     	dd("finish");
     }
 }

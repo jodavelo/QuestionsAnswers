@@ -28,3 +28,4 @@ Route::get('simi1', 'SimilarityController@primerMetodo');
 Route::get('simi2', 'SimilarityController@segundoMetodo');
 
 Route::get('save', 'TestController@test');
+Route::get('questions', 'SimilarityController@getQuestionSimilarity');

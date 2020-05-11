@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     protected $table = 'answers';
-    $incrementing = true;
-    $primaryKey = 'answer_id';
+    public $incrementing = true;
+    public $primaryKey = 'answer_id';
 
     /**
 	* Get the question related to answer

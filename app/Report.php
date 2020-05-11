@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     protected $table = 'report';
-    $incrementing = true;
-    $primaryKey = 'report_id';
+    public $incrementing = true;
+    public $primaryKey = 'report_id';
 
     // *->1
     public function answer(){
