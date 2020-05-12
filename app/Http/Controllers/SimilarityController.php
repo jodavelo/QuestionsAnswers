@@ -111,21 +111,21 @@ class SimilarityController extends Controller
     	return $arrayGnal;
     }
 
-    public function getQuestionSimilarity(){
+    public function getQuestionSimilarity($questionParam){
     	$question = null;
     	$testQ = "as you are today";
     	//$testQ = "the end";
-    	if($testQ == null || $testQ == ''){
+    	if($questionParam == null || $questionParam == ''){
     		return "Please check the question";
     	}
-    	$arrayScores = $this->populateArrayScores($testQ);
+    	$arrayScores = $this->populateArrayScores($questionParam);
     	foreach ($arrayScores as $key => $value) {
     		if($value['score'] > 0.6){
     			$question = $value['questionObject'];
     		}
     	}
     	if($question == null){
-    		return "no results for your question";
+    		return null;
     	}
     	return $question;
     }
