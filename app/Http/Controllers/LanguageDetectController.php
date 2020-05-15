@@ -6,16 +6,19 @@ use Illuminate\Http\Request;
 use DB;
 
 use LanguageDetection\Language;
-
+use \DetectLanguage\DetectLanguage;
 
 class LanguageDetectController extends Controller
 {
     public function getLanguageDetect($text){
 
-    	$ld = new Language();
-    	$result = $ld->detect($text)->bestResults()->close();
-    	$keys = array_keys($result);
-    	$isoLanguage = $keys[0];
+    	// $ld = new Language();
+    	// $result = $ld->detect($text)->bestResults()->close();
+    	// $keys = array_keys($result);
+    	// $isoLanguage = $keys[0];
+        $detectLanguage = new DetectLanguage();
+        $detectLanguage::setApiKey("your api key");
+        $isoLanguage = $detectLanguage::simpleDetect($text);
     	return $isoLanguage;
     }
 

@@ -31,3 +31,5 @@ Route::get('simi2', 'SimilarityController@segundoMetodo');
 Route::get('save', 'TestController@test');
 Route::get('questions', 'SimilarityController@getQuestionSimilarity');
 //Route::get('languageTest/{iso}', 'LanguageDetectController@getDBLanguageId');
+Route::get('lg2', 'TestController@testLanguageDetect2');
+Route::get('save_report', 'ReportController@saveReport');

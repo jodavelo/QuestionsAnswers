@@ -9,6 +9,7 @@ class Report extends Model
     protected $table = 'report';
     public $incrementing = true;
     public $primaryKey = 'report_id';
+    public $timestamps = false;
 
     // *->1
     public function answer(){

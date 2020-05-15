@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8528c22caf3f658385763d3daa6987c6",
+    "content-hash": "3666b7db07d9d53a8d238b7ce4f0b304",
     "packages": [
+        {
+            "name": "detectlanguage/detectlanguage",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/detectlanguage/detectlanguage-php.git",
+                "reference": "6d989413821a6a1eade40f3d6bfeddf82a29aa7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/detectlanguage/detectlanguage-php/zipball/6d989413821a6a1eade40f3d6bfeddf82a29aa7f",
+                "reference": "6d989413821a6a1eade40f3d6bfeddf82a29aa7f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "DetectLanguage": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laurynas Butkus"
+                }
+            ],
+            "description": "Language Detection API PHP Client",
+            "homepage": "https://github.com/detectlanguage/detectlanguage-php",
+            "keywords": [
+                "api",
+                "client",
+                "detect",
+                "detection",
+                "language"
+            ],
+            "time": "2018-10-02T21:09:56+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -367,6 +414,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -413,6 +461,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
