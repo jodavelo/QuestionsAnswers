@@ -33,4 +33,3 @@ Route::get('questions', 'SimilarityController@getQuestionSimilarity');
 //Route::get('languageTest/{iso}', 'LanguageDetectController@getDBLanguageId');
 Route::get('lg2', 'TestController@testLanguageDetect2');
 Route::get('save_report', 'ReportController@saveReport');
-Route::get('api/v1/report1', 'ReportController@answersByLanguage');
