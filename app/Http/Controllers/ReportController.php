@@ -8,6 +8,9 @@ use App\Report;
 
 use DB;
 use App\Http\Resources\AnswersByLanguageResource;
+use App\Http\Resources\UnsolicitedQuestionsResource;
+
+use App\Question;
 
 class ReportController extends Controller
 {
@@ -29,4 +32,28 @@ class ReportController extends Controller
 		$result = DB::select($query);
 		return AnswersByLanguageResource::collection(collect($result));
    	}
+
+   	public function numberOfUnsolicitedQuestions(){
+   		$arrayQuery1 = array();
+   		$arrayQuery2 = array();
+   		$query1 = "SELECT question_id from questions;";
+   		$query2 = "SELECT question_id
+					from answers 
+					where answer_id in (
+						SELECT DISTINCT  answer_id 
+						FROM report
+					);";
+		$result1 = DB::select($query1);
+		$result2 = DB::select($query2);
+		foreach ($result1 as $key => $value) {
+			array_push($arrayQuery1, $value->question_id);
+		}
+		foreach ($result2 as $key => $value) {
+			array_push($arrayQuery2, $value->question_id);
+		}
+		$dif = array_diff($arrayQuery1, $arrayQuery2);
+		$number = sizeof($dif);	
+		
+		return new UnsolicitedQuestionsResource($number);
+    }
 }

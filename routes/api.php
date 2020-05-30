@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function(){
 	Route::get('report1', 'ReportController@answersByLanguage');
+	Route::get('report2', 'ReportController@numberOfUnsolicitedQuestions');
 });

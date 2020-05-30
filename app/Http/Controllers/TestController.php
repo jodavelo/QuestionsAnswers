@@ -11,9 +11,9 @@ class TestController extends Controller
 {
     public function test(){
     	$language = new Language();
-    	$language->language = "italian";
-    	$language->iso2 = 'it';
-    	//$language->save();
+    	$language->language = "german";
+    	$language->iso2 = 'de';
+    	$language->save();
     	dd("finish");
     }
 
